@@ -32,7 +32,7 @@ transforms:
       SELECT s.sellerid, s.qtysold FROM vw_sales s 
       INNER JOIN vw_dates d 
       ON s.dateid = d.dateid
-# each SQL transform must create a temporary view and can only reference views (including source views) that have been created by previous statements
+# each SQL transform creates a temporary view by referencing views created by previous statements
 - sql: >-
       CREATE TEMPORARY VIEW vw_sales_users AS 
       SELECT s.sellerid, u.username, 
